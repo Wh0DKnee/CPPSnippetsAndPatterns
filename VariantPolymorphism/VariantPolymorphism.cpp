@@ -30,14 +30,14 @@ using ShapeVariant = std::variant<Circle, Rectangle>;
 
 int main() 
 {
-	std::vector<ShapeVariant> vars = { Circle(), Rectangle() };
+	std::vector<ShapeVariant> shapes = { Circle(), Rectangle() };
 
-	for (auto& v : vars) 
+	for (auto& shape : shapes) 
 	{
 		std::visit(Overloaded{
 			[](Circle& c) { c.Draw(); },
 			[](Rectangle& r) { r.Draw(); },
-			}, v);
+			}, shape);
 	}
 
 	return 0;
