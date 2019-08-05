@@ -16,15 +16,8 @@ template<class... Ts> struct Overloaded : Ts...
 
 template<class... Ts> Overloaded(Ts...)->Overloaded<Ts...>;
 
-struct Circle 
-{ 
-	void Draw() { std::cout << "I'm a circle." << std::endl; } 
-};
-
-struct Rectangle 
-{ 
-	void Draw() { std::cout << "I'm a rectangle." << std::endl; } 
-};
+struct Circle {};
+struct Rectangle {};
 
 using ShapeVariant = std::variant<Circle, Rectangle>;
 
@@ -35,8 +28,8 @@ int main()
 	for (auto& shape : shapes) 
 	{
 		std::visit(Overloaded{
-			[](Circle& c) { c.Draw(); },
-			[](Rectangle& r) { r.Draw(); },
+			[](Circle& c) { std::cout << "I'm a circle." << std::endl; },
+			[](Rectangle& r) { std::cout << "I'm a rectangle." << std::endl; },
 			}, shape);
 	}
 
