@@ -9,3 +9,6 @@ Random collection of interesting C++ code snippets/patterns. Will add to this as
 
 #### [Incrementing IDs for Types](https://github.com/Wh0DKnee/CPPSnippetsAndPatterns/blob/master/IncrementingIDForTypes/IncrementingIDForTypes.cpp)
 * Generate incrementing IDs for types.
+
+#### [Execute Around Pointer](https://github.com/Wh0DKnee/CPPSnippetsAndPatterns/blob/master/ExecuteAroundPointer/ExecuteAroundPointer.cpp)
+* Automatically execute some functionality before and/or after each function call on an object.
